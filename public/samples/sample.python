@@ -1,0 +1,31 @@
+from functools import lru_cache
+
+@lru_cache(maxsize=None)
+def fibonacci(n):
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+def fibonacci_sequence(count):
+    result = []
+    for i in range(count):
+        result.append(fibonacci(i))
+    return result
+
+class FibonacciCalculator:
+    def __init__(self, limit=100):
+        self.limit = limit
+        self.cache = {}
+
+    def compute(self, n):
+        if n in self.cache:
+            return self.cache[n]
+        if n <= 1:
+            return n
+        value = self.compute(n-1) + self.compute(n-2)
+        self.cache[n] = value
+        return value

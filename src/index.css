@@ -1,0 +1,9 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; }
+body { background: #0d0f12; overflow-x: hidden; }
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #13161b; }
+::-webkit-scrollbar-thumb { background: #2e3440; border-radius: 3px; }
+textarea { font-family: 'JetBrains Mono', monospace !important; tab-size: 2; }
+button { cursor: pointer; font-family: 'Syne', sans-serif; }
+textarea::placeholder { color: #4a5568; }
